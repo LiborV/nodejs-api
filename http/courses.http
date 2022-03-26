@@ -1,0 +1,49 @@
+# Get all Courses
+get {{host}}courses HTTP/1.1
+
+###
+
+# Get single courses
+get {{host}}courses/{{courseId}} HTTP/1.1
+
+###
+
+# Get courses for bootcamp
+get {{host}}bootcamps/5d725a037b292f5f8ceff787/courses HTTP/1.1
+
+###
+
+# Add new courses
+post {{host}}bootcamps/5d713995b721c3bb38c1f5d0/courses HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+"title": "new courses QQQQQ",
+"description": "This course learn you node.js",
+"weeks": 8,
+"tuition": 11100,
+"minimumSkill": "beginner",
+"scholarhipsAvailable": true
+}
+
+###
+
+# Update single courses
+put {{host}}courses/6230c1f2419309d53ca16094 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+"title": "UPDATE wwewe",
+"description": "UPDATE This course learn you node.js",
+"weeks": "99"
+}
+
+###
+
+# Delete single courses
+delete {{host}}courses/5d725cd2c4ded7bcb480eaa2 HTTP/1.1
+Authorization: Bearer {{token}}
+
+###

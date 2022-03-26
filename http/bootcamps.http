@@ -1,0 +1,40 @@
+# Get all Bootcamps
+get {{host}}bootcamps HTTP/1.1
+
+###
+
+# Get single Bootcamps
+get {{host}}bootcamps/622f694f30355e1c73341143 HTTP/1.1
+
+###
+
+# Create single Bootcamps
+post {{host}}bootcamps HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{tokenPublisher}}
+
+{
+"name": "new Boot <script>alert('dfsafs')</script>",
+"description": "description bootcamps",
+"address": "Třešňové sady 1406/10 Holešov"
+}
+
+###
+
+# Update single Bootcamps
+put {{host}}bootcamps/622f694f30355e1c73341143 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+"name": "new Bootcamp user TYPES 5555"
+}
+
+###
+
+# Delete single Bootcamps
+delete {{host}}bootcamps/622a59aab04c056fa81f5c46 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###

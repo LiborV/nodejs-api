@@ -1,0 +1,49 @@
+# Get all users
+get {{host}}users HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+###
+
+# Get single user
+get {{host}}users/5c8a1d5b0190b214360dc034 HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+###
+
+# Create single user
+post {{host}}users HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "email": "libor11@gmail.com",
+    "name": "Libor Vym11",
+    "password": "Heslo123"
+}
+
+###
+
+# Edit single user
+put {{host}}users/5c8a1d5b0190b214360dc034 HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "password": "Heslo123"
+}
+
+###
+
+# Delete single user
+delete {{host}}users/623861bd7048f0da26fbd2c7 HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "name": "Libor Vymetalik"
+}
+
+###
+

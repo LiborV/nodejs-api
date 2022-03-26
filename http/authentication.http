@@ -1,0 +1,98 @@
+# Register
+post {{host}}auth/register HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "libor001",
+    "password": "Heslo123",
+    "role": "publisher",
+    "email": "libor@libor1.cz"
+}
+
+###
+
+# Login
+post {{host}}auth/login HTTP/1.1
+content-Type: application/json
+
+#publisher
+# {
+# "email": "publisher@gmail.com",
+# "password": "123456"
+# }
+
+#user - barry , sara
+{
+"email": "sara@gmail.com",
+"password": "123456"
+}
+
+# {
+# "email": "john@gmail.com",
+# "password": "123456"
+# }
+
+# {
+# "email":"admin@gmail.com",
+# "password": "123456"
+# }
+
+###
+
+# Logout
+get {{host}}auth/logout HTTP/1.1
+
+###
+
+# Get me user
+get {{host}}auth/me HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Forgot password - generate password token and send email ...
+post {{host}}auth/forgotpassword HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "john@gmail.com"
+}
+
+###
+
+# Reset password - use url from mailtrap and set new password
+put {{host}}auth/resetpassword/798a0e933e373e207fc5c59dc683ac68ba2154f4 HTTP/1.1
+content-Type: application/json
+
+{
+    "password": "Heslo123"
+}
+
+###
+
+# Update user details - update name and email
+put {{host}}auth/updateDetails HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "email": "john@gmail.com",
+    "name": "John Doe"
+}
+
+###
+
+# Update password - update name and email
+put {{host}}auth/updatepassword HTTP/1.1
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "currentPassword": "123456",
+    "newPassword": "Heslo123"
+
+}
+
+###
+

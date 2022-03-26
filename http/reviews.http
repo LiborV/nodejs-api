@@ -1,0 +1,45 @@
+# Get all reviews
+get {{host}}reviews HTTP/ 1.1
+
+###
+
+# Get all reviews from one bootcamps
+get {{host}}bootcamps/5d713a66ec8f2b88b8f830b8/reviews HTTP/ 1.1
+
+###
+
+# Get single review
+get {{host}}reviews/5d7a514b5d2c12c7449be022 HTTP/ 1.1
+content-Type: application/json
+
+###
+
+# Add review for bootcamp
+post {{host}}bootcamps/{{bootcampId}}/reviews HTTP/ 1.1
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "it-s great ",
+    "text": "I learned a lot!!!",
+    "rating": 3
+}
+
+###
+
+# Update review -> hje třeba být user nebo admin , user musí být autor příspěvku
+put {{host}}reviews/623b18b0e6c01ded9107d568 HTTP/ 1.1
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "sssssss"
+}
+
+###
+
+# DELETE review
+delete {{host}}reviews/623b18b0e6c01ded9107d568 HTTP/ 1.1
+Authorization: Bearer {{token}}
+
+###
